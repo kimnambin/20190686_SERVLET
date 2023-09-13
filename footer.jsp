@@ -1,6 +1,6 @@
-<%@ page import="example.*" %>
-
 <%@ page contentType="text/html; charset=utf-8"%>	
+
+<%@ page import="example.*" %>
   <footer class="container">
      <p> <br> &copy; 쇼핑몰 대표 : 홍길동, 고유번호 : 20111234, 연락처 : admin@nate.com <br> 
         <%

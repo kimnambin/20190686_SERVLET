@@ -18,3 +18,4 @@ public class ShopTime {
         return CT; // 문자열 리턴
     }
 }
+
