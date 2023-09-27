@@ -2,7 +2,7 @@
 
 <%@ page import="example.*" %>
   <footer class="container">
-     <p> <br> &copy; 쇼핑몰 대표 : 홍길동, 고유번호 : 20111234, 연락처 : admin@nate.com <br> 
+     <p> <br> &copy; 쇼핑몰 대표 : 김남빈, 고유번호 : 20190686, 연락처 : mkkim044@naver.com <br> 
         <%
     	ShopTime time = new ShopTime();
          %>    
