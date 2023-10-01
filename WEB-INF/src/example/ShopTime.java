@@ -1,26 +1,19 @@
 package example;
 import java.time.ZoneId;
-import java.time.LocalTime; // 현재 시간 정보 얻기
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class ShopTime {
     public String timenow() {
-        // 시스템의 기본 타임존을 사용하여 현재 시간을 얻습니다.
-        ZoneId systemZone = ZoneId.systemDefault();
-        LocalTime currentTime = LocalTime.now(systemZone);
+        // 서버의 시간대로 설정
+        ZoneId serverZone = ZoneId.of("Asia/Seoul");
+        LocalDateTime currentTime = LocalDateTime.now(serverZone);
 
-        int hour = currentTime.getHour();
-        int minute = currentTime.getMinute();
-        int second = currentTime.getSecond();
-        
-        String am_pm = (hour < 12) ? "AM" : "PM";
-        if (hour > 12) {
-            hour -= 12;
-        }
-        
-        String CT = String.format("%02d:%02d:%02d %s", hour, minute, second, am_pm);
-        return CT;
+        // 날짜와 시간을 원하는 형식으로 포맷팅
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss a");
+        String formattedTime = currentTime.format(formatter);
+
+        return formattedTime;
     }
 }
-
-
 

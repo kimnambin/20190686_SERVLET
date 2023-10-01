@@ -13,7 +13,7 @@ public class Product implements Serializable { // 인터페이스 선언
 	private String category; 	//분류
 	private long unitsInStock; //재고수 
 	private String condition; 	//신상품 or 중고품 or 재생품
-          // 이미지
+    private String imageText;  // 이미지 텍스트
     
     public Product() {
 		super();
@@ -24,6 +24,7 @@ public class Product implements Serializable { // 인터페이스 선언
 		this.pname = pname;
 		this.unitPrice = unitPrice;
 	}
+    
 
 	public String getProductId() {
 		return productId;
@@ -89,7 +90,19 @@ public class Product implements Serializable { // 인터페이스 선언
 		this.condition = condition;
 	}
     
-    
+     public String getImageText() {
+        return imageText;
+    }
+
+    public void setImageText(String imageText) {
+        this.imageText = imageText;
+    }
+   
+    public Product(String productId, String pname) {
+    this.productId = productId;
+    this.pname = pname;
+    // 나머지 필드는 기본값으로 초기화
+}
 }
 
 

@@ -24,11 +24,16 @@
         color: blue; 
     }
     </style>
-			<a class="navbar-brand" href="./index.jsp">메뉴바 : 홈페이지</a>
-            <a class="navbar-brand" href="./index.jsp">로그인</a>
-            <a class="navbar-brand" href="./index.jsp">회원가입</a>
-            <a class="navbar-brand" href="./index.jsp">공식 블로그</a>
-             <img src="image\000.jpg" class="img-fluid" alt="main_image">
-		</div>
+			<div style="display: flex; justify-content: space-between;">
+    <div class="navbar" style="display: flex; justify-content: center;">
+        <a class="navbar-brand" href="./index.jsp">메뉴바 : 홈페이지</a>
+        <a class="navbar-brand" href="./index.jsp">로그인</a>
+        <a class="navbar-brand" href="./index.jsp">회원가입</a>
+        <a class="navbar-brand" href="./index.jsp">공식 블로그</a>
+    </div>
+    <img src="image\000.jpg" class="img-fluid" alt="main_image">
+</div>
+
+        </div>
 	</div>
 </nav>

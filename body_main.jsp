@@ -4,7 +4,7 @@
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
 
 
-<%! String greeting = "환영합니다~!!";
+<%! String greeting = "⬇️추천 추천⬇️";
 	String tagline = "하단 페이지 : 확인";%>
 	<div class="jumbotron" align="center">
 		<div class="container" align="center">
@@ -28,40 +28,20 @@
 			%>
 			<div class="col-md-4">
                
-               
+              
 <div class="card bg-dark text-white">
     <img src="image/product/<%=product.getProductId()%>.jpg" class="card-img" alt="...">
     <div class="card-img-overlay">
-        <h5 class="card-title">다옴 383</h5>
+        <h5 class="card-title">
+        <%=product.getImageText()%>
+    </h5>
         <p class="card-text">출처 : 칠구 블로그</p>
     </div>
 </div>
 
 
             
-                <%-- <div class="card bg-dark text-white">
-    <img src="image/product/P1234.jpg" class="card-img" alt="...">
-    <div class="card-img-overlay">
-        <h5 class="card-title">다옴 383</h5>
-        <p class="card-text">출처 : 칠구 블로그</p>
-    </div>
-</div>
-            
-            <div class="card bg-dark text-white">
-    <img src="image/product/P1235.jpg>.jpg" class="card-img" alt="...">
-    <div class="card-img-overlay">
-        <h5 class="card-title">송리단취향</h5>
-        <p class="card-text">출처 : 칠구 블로그</p>
-    </div>
-</div>
-            
-            <div class="card bg-dark text-white">
-    <img src="image/product/P1236.jpg>.jpg" class="card-img" alt="...">
-    <div class="card-img-overlay">
-        <h5 class="card-title">중찬미식</h5>
-        <p class="card-text">출처 : 칠구 블로그</p>
-    </div>
-</div> --%>
+         
 
 				<h3><%=product.getPname()%></h3>
 				<p><%=product.getDescription()%>
@@ -94,9 +74,6 @@
 		</div>
 	</div>
 
-         <h1 class="display-3">
-            <%=greeting%>
-         </h1>
 	</div>
         
         
