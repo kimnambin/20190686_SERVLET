@@ -16,6 +16,7 @@ public class ProductRepository {
 		food1.setUnitsInStock(1000);
 		food1.setCondition("New");
         food1.setImageText("다옴 383");
+        food1.setLink("https://blog.naver.com/79blog79/223211162195");
         
 
         Product food2 = new Product("P1235", "통삼겹 로제 파스타", 18900);
@@ -25,6 +26,7 @@ public class ProductRepository {
 		food2.setUnitsInStock(1000);
 		food2.setCondition("Refurbished");
         food2.setImageText("송리단취향");
+        food2.setLink("https://blog.naver.com/79blog79/223211162195");
 
 		Product food3 = new Product("P1236", "중식당", 6000);
 		food3.setDescription("[성결대 맛집] 알 사람들은 다 아는 성결대 근처 맛집<중찬미식>");
@@ -33,6 +35,7 @@ public class ProductRepository {
 		food3.setUnitsInStock(1000);
 		food3.setCondition("Old");
         food3.setImageText("중찬미식");
+        food3.setLink("https://blog.naver.com/79blog79/223081501736");
                 
         
         Product cafe1 = new Product("P1237", "딸기 빙수", 14000);
@@ -42,6 +45,7 @@ public class ProductRepository {
 		cafe1.setUnitsInStock(1000);
 		cafe1.setCondition("New");
         cafe1.setImageText("호안끼엠");
+        cafe1.setLink("https://blog.naver.com/79blog79/223214270369");
         
 
         Product cafe2 = new Product("P1238", "홍라드 토스트", 6500);
@@ -51,6 +55,8 @@ public class ProductRepository {
 		cafe2.setUnitsInStock(1000);
 		cafe2.setCondition("Refurbished");
         cafe2.setImageText("홍라드");
+        cafe2.setLink("https://blog.naver.com/79blog79/223026372361");
+        
 
 		Product cafe3 = new Product("P1239", "진저베어 클래식 미트파이", 8500);
 		cafe3.setDescription("[송리단길 카페] 송리단길에서 제일 유명한 카페 <진저베어>");
@@ -59,6 +65,7 @@ public class ProductRepository {
 		cafe3.setUnitsInStock(1000);
 		cafe3.setCondition("Old");
         cafe3.setImageText("진저베어");
+        cafe3.setLink("https://blog.naver.com/79blog79/223215492314");
         
         
         Product go01 = new Product("P1240", "잠실 야구장");
@@ -68,6 +75,7 @@ public class ProductRepository {
 		go01.setUnitsInStock(1000);
 		go01.setCondition("New");
         go01.setImageText("잠실 야구장");
+        go01.setLink("https://blog.naver.com/79blog79/223171376856");
         
         
         Product go02 = new Product("P1241", "광명동굴");
@@ -77,6 +85,7 @@ public class ProductRepository {
 		go02.setUnitsInStock(1000);
 		go02.setCondition("New");
         go02.setImageText("광명동굴");
+        go02.setLink("https://blog.naver.com/79blog79/222870846078");
         
         
         Product go03 = new Product("P1242", "월미도" );
@@ -86,6 +95,7 @@ public class ProductRepository {
 		go03.setUnitsInStock(1000);
 		go03.setCondition("New");
         go03.setImageText("월미도");
+        go03.setLink("https://blog.naver.com/79blog79/222870846078");
        
         
         
@@ -106,9 +116,26 @@ public class ProductRepository {
         listOfProducts.add(go02);
         listOfProducts.add(go03);
 		// listOfProducts.add(상품명);
-	}
+        
+    }
+    
+    public ArrayList<Product> getAllProducts() {
+        return listOfProducts;
+    }
+    
+    public Product getProductById(String productId) {
+        Product productById = null;
 
-	public ArrayList<Product> getAllProducts() {
-		return listOfProducts;
-	}
+        for (int i = 0; i < listOfProducts.size(); i++) {
+            Product product = listOfProducts.get(i);
+            if (product != null && product.getProductId() != null && product.getProductId().equals(productId)) {
+                productById = product;
+                break;
+            }
+        }
+        return productById;
+    }
 }
+
+	
+

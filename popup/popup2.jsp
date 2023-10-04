@@ -7,7 +7,7 @@
             <br><br>
            블로그 체크인 챌린지 
             <br><br> 
-                <img src="image\02.jpg"  alt="...">
+                <img src="../image\02.jpg"  alt="...">
                 <br><br>
             홈페이지 메인 화면 로딩 후 자동으로 열립니다.
             </h4>

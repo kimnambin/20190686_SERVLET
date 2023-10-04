@@ -13,7 +13,7 @@
 	</div>
     
     <div>
-        <img src="image\blog.jpg" class="img-fluid" alt="main_image">
+        <img src="../image\blog.jpg" class="img-fluid" alt="main_image">
     </div>
     
 	<div class="container">
@@ -31,7 +31,7 @@
         <a class="navbar-brand" href="./index.jsp">회원가입</a>
         <a class="navbar-brand" href="./index.jsp">공식 블로그</a>
     </div>
-    <img src="image\000.jpg" class="img-fluid" alt="main_image">
+    <img src="../image\000.jpg" class="img-fluid" alt="main_image">
 </div>
 
         </div>
