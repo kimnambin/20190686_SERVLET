@@ -58,7 +58,7 @@ public class ProductRepository {
         cafe2.setLink("https://blog.naver.com/79blog79/223026372361");
         
 
-		Product cafe3 = new Product("P1239", "진저베어 클래식 미트파이", 8500);
+		Product cafe3 = new Product("P1239", "클래식 미트파이", 8500);
 		cafe3.setDescription("[송리단길 카페] 송리단길에서 제일 유명한 카페 <진저베어>");
 		cafe3.setCategory("카페");
 		cafe3.setManufacturer("서울");

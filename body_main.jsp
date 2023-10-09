@@ -8,27 +8,33 @@
 
 <div class="jumbotron" align="center">
 	<div class="container" align="center">
-		<div class="jumbotron" align="center">
-			<div class="container" align="center">
-				<h3 class="display-4" align="center">
-					<%= greeting %>
-				</h3>
-			</div>
-		</div>
+		<h3 class="display-4"><%= greeting %></h3>
+	</div>
+</div>
 
-		<%
-		ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.
-		%>
+<div class="container">
+	<%
+	ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.
+	%>
 
-		<div class="container">
-			<div class="row" align="center">
-				<%
-				for (int i = 0; i < listOfProducts.size(); i++) {
-					Product product = listOfProducts.get(i);
-				%>
-				<div class="col-md-4">
-
-					<div class="card bg-dark text-white">
+	<%
+int productsPerGroup = 3;
+String[] groupTitles = { "<div class='list-group-item'>🍽️맛집 추천🍴</div>",
+  "<div class='list-group-item'>☕카페 추천🍹</div>",
+  "<div class='list-group-item'>😝갈만한 곳 추천😊</div>"}; // 그룹 제목 배열
+int groupNumber = 0; // 그룹 번호 초기화
+for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++) {
+%>
+<div class="row justify-content-center">
+	<h2><%= groupTitles[groupNumber] %></h2>
+</div>
+<div class="row" align="center">
+	<%
+	for (int j = i; j < Math.min(i + productsPerGroup, listOfProducts.size()); j++) {
+		Product product = listOfProducts.get(j);
+	%>
+	<div class="col-md-4">
+		<div class="card bg-dark text-white">
 						<img src="image/product/<%= product.getProductId() %>.jpg" class="card-img" alt="...">
 						<div class="card-img-overlay">
 							<h5 class="card-title">
@@ -37,45 +43,47 @@
 							<p class="card-text">출처 : 칠구 블로그</p>
 						</div>
 					</div>
-
-					<h3><%= product.getPname() %></h3>
-					<p><%= product.getDescription() %></p>
+		<h3><%= product.getPname() %></h3>
+		<p><%= product.getDescription() %></p>
 					<p><%= product.getUnitPrice() %>💲</p>
 					<p><a href="product_detail.jsp?id=<%= product.getProductId() %>"
 							class="btn btn-secondary" role="button">상세 정보 &raquo;</a></p>
-				</div>
-				<%
-				}
-				%>
+	</div>
+	<%
+	}
+	%>
+</div>
+<%
+}
+%>
+
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="col-md-4 offset-md-4">
+		<form method="post" name="search" action="searchbbs.jsp">
+			<div class="form-group">
+				<select class="form-control" name="searchField">
+					<option value="0">주제</option>
+					<option value="bbsTitle">제목</option>
+					<option value="userID">작성자</option>
+				</select>
 			</div>
-			<hr>
-		</div>
-		<%-- 구글링 해서 검색창 넣음 --%>
-		<div class="row">
-			<div class="col-md-4 offset-md-4">
-				<form method="post" name="search" action="searchbbs.jsp">
-					<div class="form-group">
-						<select class="form-control" name="searchField">
-							<option value="0">주제</option>
-							<option value="bbsTitle">제목</option>
-							<option value="userID">작성자</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="검색어 입력" name="searchText" maxlength="100">
-					</div>
-					<button type="submit" class="btn btn-success">검색</button>
-				</form>
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="검색어 입력" name="searchText" maxlength="100">
 			</div>
-		</div>
+			<button type="submit" class="btn btn-success">검색</button>
+		</form>
 	</div>
 </div>
 
 <div class="card bg-dark text-white">
 	<img src="image/7979.jpg" class="card-img" alt="...">
 	<div class="card-img-overlay">
-		<h5 class="card-title">이웃새글</h5>
-		<p class="card-text">글 보러가기</p>
+		<h5 class="card-title">✔️이웃새글✔️</h5>
+		<p class="card-text">⭐글 보러가기⭐</p>
 	</div>
 </div>
 
