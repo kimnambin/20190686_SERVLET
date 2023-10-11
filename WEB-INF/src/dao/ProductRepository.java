@@ -5,6 +5,12 @@ import dto.Product;
 public class ProductRepository {
 
 	private ArrayList<Product> listOfProducts = new ArrayList<Product>(); // ArrayList를 Product로 캐스팅
+       
+    private static ProductRepository instance = new ProductRepository();
+
+   public static ProductRepository getInstance(){
+	return instance;
+   }
 
 	
     //여기에다 원하는 상품 3개 넣으면 됨
@@ -17,6 +23,7 @@ public class ProductRepository {
 		food1.setCondition("New");
         food1.setImageText("다옴 383");
         food1.setLink("https://blog.naver.com/79blog79/223211162195");
+        food1.setFilename("P1234.png");
         
 
         Product food2 = new Product("P1235", "통삼겹 로제 파스타", 18900);
@@ -27,6 +34,7 @@ public class ProductRepository {
 		food2.setCondition("Refurbished");
         food2.setImageText("송리단취향");
         food2.setLink("https://blog.naver.com/79blog79/223211162195");
+        food2.setFilename("P1235.png");
 
 		Product food3 = new Product("P1236", "중식당", 6000);
 		food3.setDescription("[성결대 맛집] 알 사람들은 다 아는 성결대 근처 맛집<중찬미식>");
@@ -36,6 +44,7 @@ public class ProductRepository {
 		food3.setCondition("Old");
         food3.setImageText("중찬미식");
         food3.setLink("https://blog.naver.com/79blog79/223081501736");
+        food3.setFilename("P1236.png");
                 
         
         Product cafe1 = new Product("P1237", "딸기 빙수", 14000);
@@ -46,7 +55,7 @@ public class ProductRepository {
 		cafe1.setCondition("New");
         cafe1.setImageText("호안끼엠");
         cafe1.setLink("https://blog.naver.com/79blog79/223214270369");
-        
+        cafe1.setFilename("P1237.png");
 
         Product cafe2 = new Product("P1238", "홍라드 토스트", 6500);
 		cafe2.setDescription("[행궁동 카페] 다양한 컨셉으로 사진 찍기 좋은 토스트 맛집 <홍라드>");
@@ -56,6 +65,7 @@ public class ProductRepository {
 		cafe2.setCondition("Refurbished");
         cafe2.setImageText("홍라드");
         cafe2.setLink("https://blog.naver.com/79blog79/223026372361");
+        cafe2.setFilename("P1238.png");
         
 
 		Product cafe3 = new Product("P1239", "클래식 미트파이", 8500);
@@ -66,6 +76,7 @@ public class ProductRepository {
 		cafe3.setCondition("Old");
         cafe3.setImageText("진저베어");
         cafe3.setLink("https://blog.naver.com/79blog79/223215492314");
+        cafe3.setFilename("P1239.png");
         
         
         Product go01 = new Product("P1240", "잠실 야구장");
@@ -76,6 +87,7 @@ public class ProductRepository {
 		go01.setCondition("New");
         go01.setImageText("잠실 야구장");
         go01.setLink("https://blog.naver.com/79blog79/223171376856");
+        go01.setFilename("P1240.png");
         
         
         Product go02 = new Product("P1241", "광명동굴");
@@ -86,6 +98,7 @@ public class ProductRepository {
 		go02.setCondition("New");
         go02.setImageText("광명동굴");
         go02.setLink("https://blog.naver.com/79blog79/222870846078");
+        go02.setFilename("P1241.png");
         
         
         Product go03 = new Product("P1242", "월미도" );
@@ -96,6 +109,7 @@ public class ProductRepository {
 		go03.setCondition("New");
         go03.setImageText("월미도");
         go03.setLink("https://blog.naver.com/79blog79/222870846078");
+        go03.setFilename("P1242.png");
        
         
         
@@ -135,6 +149,11 @@ public class ProductRepository {
         }
         return productById;
     }
+    
+    public void addProduct(Product product) {
+	listOfProducts.add(product);
+   }
+
 }
 
 	
