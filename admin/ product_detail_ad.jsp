@@ -2,10 +2,9 @@
 <%@ page import="dto.Product"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="example.*" %>
-<%@ page errorPage = "exception/product_not_found.jsp" %>
+
 <%@ page import="dao.ProductRepository"%>
-<%@ page import="java.util.ArrayList" %>
-<!-- <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" /> -->
+
 
 <html>
 <head>
