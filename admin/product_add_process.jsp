@@ -19,28 +19,18 @@
 
 
 
-	String productId = request.getParameter("productId");
-	String name = request.getParameter("name");
-	String unitPrice = request.getParameter("unitPrice");
-	String description = request.getParameter("description");
-	String manufacturer = request.getParameter("manufacturer");
-	String category = request.getParameter("category");
-	String unitsInStock = request.getParameter("unitsInStock");
-	String condition = request.getParameter("condition");
-    
-    String imageText = request.getParameter("imageText");
-    String link = request.getParameter("link");
 
-
-    String productId = multi.getParameter("productid”);
-	String name = multi.getParameter(“name”);
-	String unitPrice = multi.getParameter(“unitPrice”);
-	String description = multi.getParameter(“description”);
-	String manufacturer = multi.getParameter(“manufacturer”);
-	String category = multi.getParameter(“category”);
-	String unitsInStock = multi.getParameter(“unitsInStock”);
-	String condition = multi.getParameter(“condition”);
+    String productId = multi.getParameter("productid");
+	String name = multi.getParameter("name");
+	String unitPrice = multi.getParameter("unitPrice");
+	String description = multi.getParameter("description");
+	String manufacturer = multi.getParameter("manufacturer");
+	String category = multi.getParameter("category");
+	String unitsInStock = multi.getParameter("unitsInStock");
+	String condition = multi.getParameter("condition");
     //더 추가하기
+    String imageText = multi.getParameter("imageText");
+    String link = multi.getParameter("link");
     
 
 	Integer price;

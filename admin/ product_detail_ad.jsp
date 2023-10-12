@@ -4,6 +4,7 @@
 <%@ page import="example.*" %>
 <%@ page errorPage = "exception/product_not_found.jsp" %>
 <%@ page import="dao.ProductRepository"%>
+<%@ page import="java.util.ArrayList" %>
 <!-- <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" /> -->
 
 <html>
@@ -12,7 +13,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<title>상세 정보</title>
+<title>상세 정보 관리자모드</title>
 </head>
 
     <body>
@@ -26,7 +27,7 @@
 	<%
 		String id = request.getParameter("id");
 		ProductRepository dao = ProductRepository.getInstance();
-		Product product = dao.getProductById(id); 
+	    Product product = dao.getProductById(id);
     %>
         
 	<div class="container" align="center">
@@ -44,7 +45,7 @@
 				<h4><%=product.getUnitPrice()%>원</h4>
 
                 <div class="card bg-dark text-white">
-                    <img src="image/product/<%=product.getProductId()%>.jpg" class="card-img" alt="...">
+                    <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="...">
                     <div class="card-img-overlay" align="center">
                     
                         <h5 class="card-title" align="center"><%= product.getImageText() %></h5>
@@ -61,6 +62,6 @@
 		</div>
 		<hr>
 	</div>
-    <%@ include file="footer.jsp" %>
+    <%@ include file="footer_ad.jsp" %>
 </body>
 </html>

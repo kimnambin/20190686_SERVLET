@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>
 
@@ -15,7 +15,7 @@
 </div>
     <% 
     ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어옵니다.
-%>
+    %>
 
 	
 
@@ -42,7 +42,7 @@ for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++)
 	%>
 	<div class="col-md-4">
 		<div class="card bg-dark text-white">
-						<!-- <img src="image/product/<%=product.getProductId()%>.jpg" class="card-img" alt="..."> -->
+						
                             <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="...">
 
 						<div class="card-img-overlay">
@@ -55,7 +55,8 @@ for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++)
 		<h3><%= product.getPname() %></h3>
 		<p><%= product.getDescription() %></p>
 					<p><%= product.getUnitPrice() %>💲</p>
-					<p><a href="product_detail_ad.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상품 상세 정보 &raquo;</a>
+					<p><a href="product_detail_ad.jsp?id=<%=product.getProductId()%>" 
+                          class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a>
 </p>
 	</div>
 	<%

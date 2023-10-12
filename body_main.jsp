@@ -35,7 +35,7 @@ for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++)
 	%>
 	<div class="col-md-4">
 		<div class="card bg-dark text-white">
-						<!--<img src="image/product/<%= product.getProductId() %>.jpg" class="card-img" alt="..."> -->
+						
                             <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="...">
 
 						<div class="card-img-overlay">
