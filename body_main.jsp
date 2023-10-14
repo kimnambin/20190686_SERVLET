@@ -19,9 +19,14 @@
 
 	<%
 int productsPerGroup = 3;
-String[] groupTitles = { "<div class='list-group-item'>🍽️맛집 추천🍴</div>",
-  "<div class='list-group-item'>☕카페 추천🍹</div>",
-  "<div class='list-group-item'>😝갈만한 곳 추천😊</div>"}; // 그룹 제목 배열
+String[] groupTitles = {
+    "<div class='list-group-item'>🍽️맛집 추천🍴</div>",
+    "<div class='list-group-item'>☕카페 추천🍹</div>",
+    "<div class='list-group-item'>😝갈만한 곳 추천😊</div>",
+    "<div class='list-group-item'>🏞️테스트📸</div>"
+};
+
+    
 int groupNumber = 0; // 그룹 번호 초기화
 for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++) {
 %>

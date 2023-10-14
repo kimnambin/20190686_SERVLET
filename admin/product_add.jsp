@@ -53,6 +53,7 @@
                     <input type="radio" name="category" value="New"> 맛집
                     <input type="radio" name="category" value="Old"> 카페
                     <input type="radio" name="category" value="Refurbished"> 갈만한 곳
+                    <input type="radio" name="category" value="Refurbished"> 테스트
                 </div>
             </div>
             <div class="form-group row">
