@@ -26,11 +26,12 @@
     </style>
 			<div style="display: flex; justify-content: space-between;">
     <div class="navbar" style="display: flex; justify-content: center;">
-        <a class="navbar-brand" href="./index.jsp">작성자 보기/추가/수정/삭제</a>
+        <a class="navbar-brand" href="login/login.jsp">작성자 보기/추가/수정/삭제</a>
             <a class="navbar-brand" href="index_ad.jsp">리뷰 보기</a>
             <a class="navbar-brand" href="product_add.jsp">등록</a>
             <a class="navbar-brand" href="index_ad.jsp">수정/삭제</a>
             <a class="navbar-brand" href="../index.jsp">일반모드</a>
+            <a href="../login/logout.jsp" class="btn btn-sm btn-success pull-right">로그아웃</a>
                                                        
     </div>
     <img src="../image\000.jpg" class="img-fluid" alt="main_image">

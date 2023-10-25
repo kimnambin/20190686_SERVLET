@@ -2,9 +2,10 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkwu6Cf0FNN6wF9zHjePuu7F6G5TOeNM6j7dFp7FIAvkojw5pe1biU6XG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type ="text/javascript" src ="../js/validation.js">
     </script>
     <title>리뷰 등록</title>
 </head>
@@ -20,19 +21,19 @@
             <div class="form-group row">
                 <label for="productId" class="col-sm-2">상품 코드</label>
                 <div class="col-sm-3">
-                    <input type="text" name="productId" class="form-control">
+                    <input type="text" id ="productId" name="productId" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2">제목</label>
                 <div class="col-sm-3">
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" id ="name" name="name" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="unitPrice" class="col-sm-2">가격</label>
                 <div class="col-sm-3">
-                    <input type="text" name="unitPrice" class="form-control">
+                    <input type="text" id ="unitPrice" name="unitPrice" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
@@ -59,7 +60,7 @@
             <div class="form-group row">
                 <label for="unitsInStock" class="col-sm-2">주차</label>
                 <div class="col-sm-3">
-                    <input type="text" name="unitsInStock" class="form-control">
+                    <input type="text" id ="unitsInStock"  name="unitsInStock" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
@@ -78,7 +79,9 @@
             </div>
             <div class="form-group row">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" class="btn btn-primary" value="등록">
+                    <input type ="button" class="btn btn-primary" value="등록" onclick ="CheckAddProduct()">
+                    
+
                 </div>
             </div>
         </form>
