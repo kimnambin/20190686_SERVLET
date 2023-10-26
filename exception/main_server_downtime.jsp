@@ -12,7 +12,7 @@
         
         <p>에러 코드: 404 - 페이지를 찾을 수 없음</p>
         
-        <p><a href="../body_main.jsp">홈페이지로 이동</a></p>
+        <p><a href="../index.jsp">홈페이지로 이동</a></p>
     </div>
 </body>
 </html>

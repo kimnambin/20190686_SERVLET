@@ -3,58 +3,49 @@
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>
 
-<!-- <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" /> -->
-
 <%! String greeting = "⬇️추천 추천⬇️";
-   String tagline = "하단 페이지 : 확인"; %>
+	String tagline = "하단 페이지 : 확인";%>
 
-<div class="jumbotron" align="center">
-   <div class="container">
-      <h3 class="display-4"><%= greeting %></h3>
-   </div>
-</div>
-<%
-ArrayList<Product> listOfProducts = productDAO.getAllProducts();
-%>
+    <div class="container">
+	<div class="jumbotron">
+		<div class="container">
+			<h3 class="display-4">
+				<%=greeting%>
+            </h3>
+		</div>
+	</div>	
+        
+	<%
+		ProductRepository dao = ProductRepository.getInstance();
+		ArrayList<Product> listOfProducts = dao.getAllProducts();
+	%>
 
-<div class="container">
-   <%
-   int productsPerGroup = 3;
-   String[] groupTitles = { "🍽️맛집 추천🍴", "☕카페 추천🍹", "😝갈만한 곳 추천😊" };
-   int groupNumber = 0;
-   for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++) {
-   %>
-   <div class="row justify-content-center">
-      <h2><%= groupTitles[groupNumber] %></h2>
-   </div>
-   <div class="row" align="center">
-      <%
-      for (int j = i; j < Math.min(i + productsPerGroup, listOfProducts.size()); j++) {
-         Product product = listOfProducts.get(j);
-      %>
-      <div class="col-md-4">
-         <div class="card bg-dark text-white">
-            <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="...">
-            <div class="card-img-overlay">
-               <h5 class="card-title"><%= product.getImageText() %></h5>
-               <p class="card-text">출처 : 칠구 블로그</p>
-            </div>
-         </div>
-         <h3><%= product.getPname() %></h3>
-         <p><%= product.getDescription() %></p>
-         <p><%= product.getUnitPrice() %>💲</p>
-         <p><a href="product_detail_ad.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a></p>
-      </div>
-      <%
-      }
-      %>
-   </div>
-   <%
-   }
-   %>
-</div>
+	<div class="container">
+		<div class="row" align="center">
+			<%
+				for (int i = 0; i < listOfProducts.size(); i++) { // 반복문 시작 : 리스트 저장된 상품 크기만큼 반복
+					Product product = listOfProducts.get(i); // 상품 정보 얻기
+			%>
 
-<hr>
+    			<div class="col-md-4">
+                    <div class="card bg-dark text-white">
+                        <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                        <h5 class="card-title"> 이미지 샘플</h5>
+                        <p class="card-text">출처 : 칠구 블로그 </p>
+                        </div>
+                        </div>
+				<h3><%=product.getPname()%></h3> <!-- 상품 이름 -->
+				<p><%=product.getDescription()%> <!-- 상품 정보 -->
+				<p><%=product.getUnitPrice()%>원 <!-- 상품 가격 -->
+                <p><a href="product_detail_ad.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상품 상세 정보 &raquo;</a>
+			</div>
+			<%
+				} // 반복문 끝
+			%>
+		</div>
+		<hr>
+	</div>
 
 <div class="row">
    <div class="col-md-4 offset-md-4">
