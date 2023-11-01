@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="unitsInStock" class="col-sm-2">주차</label>
+                <label for="unitsInStock" class="col-sm-2">블로그 리뷰수</label>
                 <div class="col-sm-3">
                     <input type="text" id ="unitsInStock"  name="unitsInStock" class="form-control">
                 </div>

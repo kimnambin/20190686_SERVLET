@@ -23,10 +23,12 @@
 			<form-error-page>/login/login_failed.jsp</form-error-page>
 		</form-login-config>
 	</login-config>
-    
+</web-app>
+
+<!-- 
     <error-page>
         <error-code>404</error-code>
         <location>/exception/main_server_downtime.jsp</location> 
     </error-page>
-</web-app>
+-->
 

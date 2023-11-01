@@ -2,9 +2,7 @@
 <%@ page import="dto.Product"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="example.*" %>
-
 <%@ page import="dao.ProductRepository"%>
-
 
 <html>
 <head>

@@ -9,15 +9,16 @@ public class Product implements Serializable { // 인터페이스 선언
 	private String pname;		//상품명
 	private Integer unitPrice; //상품 가격
 	private String description; //상품 설명
-	private String manufacturer;//제조사
+	private String manufacturer;//위치 
 	private String category; 	//분류
-	private long unitsInStock; //재고수 
+	private long unitsInStock; //블로그 리뷰수
 	private String condition; 	//신상품 or 중고품 or 재생품
     
     private String imageText;  // 이미지 텍스트
     private String link; // 링크 추가함 
     
     private String filename; 	// 파일 이름 변수
+    private int quantity;	//장바구니에 담은 개수 -> 나는 저장목록
     
     public Product() {
 		super();
@@ -112,6 +113,14 @@ public class Product implements Serializable { // 인터페이스 선언
     
     public void setFilename(String filename) { // 파일 이름 설정
 	this.filename = filename;
+}
+    
+    public int getQuantity() {
+	return quantity;
+}
+
+public void setQuantity(int quantity) {
+	this.quantity = quantity;
 }
 
  public String getFilename() { // 파일 이름 리턴

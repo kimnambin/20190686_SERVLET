@@ -31,14 +31,16 @@
                     <div class="card bg-dark text-white">
                         <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="...">
                         <div class="card-img-overlay">
-                        <h5 class="card-title"> 이미지 샘플</h5>
+                        <h5 class="card-title">
+								<%= product.getImageText() %>
+							</h5>
                         <p class="card-text">출처 : 칠구 블로그 </p>
                         </div>
                         </div>
 				<h3><%=product.getPname()%></h3> <!-- 상품 이름 -->
 				<p><%=product.getDescription()%> <!-- 상품 정보 -->
 				<p><%=product.getUnitPrice()%>원 <!-- 상품 가격 -->
-                <p><a href="product_detail_ad.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상품 상세 정보 &raquo;</a>
+                <p><a href="../product_detail.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상품 상세 정보 &raquo;</a>
 			</div>
 			<%
 				} // 반복문 끝
