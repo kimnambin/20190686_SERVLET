@@ -7,7 +7,7 @@
 <%
 	String id = request.getParameter("id");
 	if (id == null || id.trim().equals("")) {
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("index.jsp");
 		return;
 	}
 
@@ -49,5 +49,5 @@ ArrayList<Product> list = (ArrayList<Product>) session.getAttribute("cartlist");
 		list.add(goods);
 	}
 
-	response.sendRedirect("../product_cart.jsp?id=" + id); // 장바구니 화면 페이지로 이동
+	response.sendRedirect("product_cart.jsp?id=" + id); // 장바구니 화면 페이지로 이동
 %>
