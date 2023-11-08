@@ -51,9 +51,9 @@
                 
                 
 <p><form name="addForm" action="cart/product_cart_add.jsp?id=<%=product.getProductId()%>" method="post">
-			<!-- <a href="order/order_info.jsp" class="btn btn-info" onclick="addToCart()"> 예약하기 &raquo;</a> -->
-            <a href="order/order_info.jsp" class="btn btn-info"> 예약하기 &raquo;</a>
-			<a href="cart/product_cart.jsp" class="btn btn-warning" onclick="addToCart()"> 저장하기 &raquo;</a>
+			 <a href="#" class="btn btn-info" onclick="addToCart()"> 상품저장하기 &raquo;</a> 
+           <!-- <a href="order/order_info.jsp" class="btn btn-info"> 예약하기 &raquo;</a> -->
+			<a href="cart/product_cart.jsp" class="btn btn-warning" > 저장하기 &raquo;</a>
                 
 	</form>
 
