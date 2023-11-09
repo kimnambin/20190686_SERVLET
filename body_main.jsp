@@ -85,18 +85,23 @@ for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++)
 	</div>
 </div>
 
-<div class="card bg-dark text-white">
+<div class="container">
+    
+<div class="card bg-dark text-blue">
 	<img src="image/7979.jpg" class="card-img" alt="...">
 	<div class="card-img-overlay">
 		<h5 class="card-title">✔️이웃새글✔️</h5>
 		<p class="card-text">⭐글 보러가기⭐</p>
 	</div>
 </div>
-
+        </div>
+    
+<div class="container">
 <div class="list-group">
 	<a href="#" class="list-group-item list-group-item-action active" aria-current="true">
 		블로그 구경하기</a>
 	<a href="#" class="list-group-item list-group-item-action">공감하기</a>
 	<a href="#" class="list-group-item list-group-item-action">댓글달기</a>
 </div>
+    </div>
 
