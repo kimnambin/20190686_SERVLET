@@ -2,6 +2,8 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="dto.Product"%>
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
+<!-- 검색 추가 구현 -->
+<%@ page import="java.io.*,java.net.*,java.util.*" %>
 
 <%! String greeting = "⬇️추천 추천⬇️";
 	String tagline = "하단 페이지 : 확인"; %>
@@ -11,6 +13,19 @@
 		<h3 class="display-4"><%= greeting %></h3>
 	</div>
 </div>
+
+<!-- 추가 구현 부분 (검색) -->
+ <script>
+    function addsearch() {
+        var searchText = document.getElementById('searchText').value;
+        var encodedSearchText = encodeURIComponent(searchText);
+        var searchURL = 'https://section.blog.naver.com/Search/Post.naver?pageNo=1&rangeType=ALL&orderBy=sim&keyword=' + encodedSearchText;
+        window.location.href = searchURL;
+    }
+</script>
+
+
+
 
 <div class="container">
 	<%
@@ -67,23 +82,33 @@ for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++)
 
 <hr>
 
+<style>
+   
+                    .btn-secondary { 
+                        background-color: #2ecc71;
+                        border-color: #2ecc71;
+                    }
+                </style>
+
 <div class="row">
 	<div class="col-md-4 offset-md-4">
 		<form method="post" name="search" action="searchbbs.jsp">
 			<div class="form-group">
 				<select class="form-control" name="searchField">
-					<option value="0">주제</option>
-					<option value="bbsTitle">제목</option>
+					<option value="0">글</option>
+					<option value="bbsTitle">블로그</option>
 					<option value="userID">작성자</option>
 				</select>
 			</div>
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="검색어 입력" name="searchText" maxlength="100">
+				<input type="text" class="form-control" placeholder="검색어 입력" id="searchText" maxlength="100">
 			</div>
-			<button type="submit" class="btn btn-success">검색</button>
+			<button type="button" class="btn btn-success" onclick="addsearch()">>검색</button>
 		</form>
 	</div>
 </div>
+
+<div id="searchResult"></div>
 
 <div class="container">
     

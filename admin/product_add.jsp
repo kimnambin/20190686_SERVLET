@@ -19,20 +19,20 @@
     <div class="container">
         <form name="newProduct" action="product_add_process.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
             <div class="form-group row">
-                <label for="productId" class="col-sm-2">상품 코드</label><br>
+                <label for="productId" class="col-sm-2">*상품 코드</label><br>
                 
                 <div class="col-sm-3">
                     <input type="text" id ="productId" name="productId" class="form-control" placeholder="(P+숫자 조합)">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="name" class="col-sm-2">제목</label>
+                <label for="name" class="col-sm-2">*제목</label>
                 <div class="col-sm-3">
                     <input type="text" id ="name" name="name" class="form-control" placeholder="제목을 입력하세요">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="unitPrice" class="col-sm-2">가격</label>
+                <label for="unitPrice" class="col-sm-2">*가격</label>
                 <div class="col-sm-3">
                     <input type="text" id ="unitPrice" name="unitPrice" class="form-control" placeholder="반드시 숫자로 입력하세요">
                 </div>
@@ -44,13 +44,13 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="manufacturer" class="col-sm-2">위치</label>
+                <label for="manufacturer" class="col-sm-2">*위치</label>
                 <div class="col-sm-3">
                     <input type="text" name="manufacturer" class="form-control" placeholder="ex) 경기도 화성시 ~~">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2">분류</label>
+                <label class="col-sm-2">*분류</label>
                 <div class="col-sm-5">
                     <input type="radio" name="category" value="맛집"> 맛집
                     <input type="radio" name="category" value="카페"> 카페
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class ="col-sm-2">이미지</label>
+                <label class ="col-sm-2">*이미지</label>
                 <div class="col-sm-5">
                     <input type="file" name="productImage" class="form-control">
                 </div>

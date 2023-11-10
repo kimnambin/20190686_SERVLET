@@ -5,7 +5,8 @@
        	 	<h4 class="display-4" align="center">
             나만 알고 싶은 풍성한 혜택
             <br><br>
-           블로그 체크인 챌린지 
+                <a href="popupadd.jsp">블로그 체크인 챌린지</a>
+            
             <br><br> 
                 <img src="../image\02.jpg"  alt="...">
                 <br><br>

@@ -128,7 +128,7 @@ public class ProductRepository {
         listOfProducts.add(cafe3);
         listOfProducts.add(go01);
         listOfProducts.add(go02);
-        //listOfProducts.add(go03);
+        listOfProducts.add(go03);
 		// listOfProducts.add(상품명);
         
     }

@@ -41,8 +41,8 @@
 	<div style="padding-top: 50px">
 		<table class="table table-hover">
 			<tr>
-				<th>상품</th>
-				<th>가격</th>
+				<th>이름</th>
+				<th>분류</th>
 				<th>수량</th>
 				<th>가격</th>
 				<th>비고</th>
@@ -60,7 +60,7 @@
 			%>
 			<tr>
 				<td><%=product.getProductId()%> - <%=product.getPname()%></td>
-				<td><%=product.getUnitPrice()%></td>
+				<td><%=product.getCategory()%></td>
 				<td><%=product.getQuantity()%></td>
 				<td><%=total%></td>
 				<td><a href="product_cart_remove.jsp?id=<%=product.getProductId()%>" class="badge badge-danger">삭제</a></td>
