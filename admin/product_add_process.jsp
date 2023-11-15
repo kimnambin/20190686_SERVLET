@@ -5,6 +5,7 @@
 <%@ page import="com.oreilly.servlet.multipart.*"%>
 <%@ page import="java.util.Enumeration" %>
 
+<!-- 원본 파일 -->
 
 <%
 	request.setCharacterEncoding("UTF-8");

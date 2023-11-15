@@ -4,6 +4,8 @@
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
 <!-- 검색 추가 구현 -->
 <%@ page import="java.io.*,java.net.*,java.util.*" %>
+<%@ page import="java.sql.*"%> <!-- db 연동 -->
+<%@ include file="db/db_conn.jsp"%> <!-- db 연동 -->
 
 <%! String greeting = "⬇️추천 추천⬇️";
 	String tagline = "하단 페이지 : 확인"; %>
@@ -28,9 +30,8 @@
 
 
 <div class="container">
-	<%
-	ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.
-	%>
+	<% ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.
+	%> 
 
 	<%
 int productsPerGroup = 3;
@@ -48,14 +49,23 @@ for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++)
 	<h2><%= groupTitles[groupNumber] %></h2>
 </div>
 <div class="row" align="center">
+    
+    <%
+		String sql = "select * from product"; // 조회
+		pstmt = conn.prepareStatement(sql); // 연결 생성
+		rs = pstmt.executeQuery(); // 쿼리 실행
+		while (rs.next()) { // 결과 ResultSet 객체 반복
+	%>
+    
 	<%
 	for (int j = i; j < Math.min(i + productsPerGroup, listOfProducts.size()); j++) {
 		Product product = listOfProducts.get(j);
 	%>
+    
 	<div class="col-md-4">
 		<div class="card bg-dark text-white">
 						
-                            <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="...">
+                           <img src="image/product/<%=rs.getString("p_fileName")%>" class="card-img" alt="..."> <!-- db연동 -->
 
 						<div class="card-img-overlay">
 							<h5 class="card-title">
@@ -64,19 +74,24 @@ for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++)
 							<p class="card-text">출처 : 칠구 블로그</p>
 						</div>
 					</div>
-		<h3><%= product.getPname() %></h3>
-		<p><%= product.getDescription() %></p>
-					<p><%= product.getUnitPrice() %>💲</p>
-					<p><a href="product_detail.jsp?id=<%= product.getProductId() %>"
-							class="btn btn-secondary" role="button">상세 정보 &raquo;</a></p>
+		<h3><%=rs.getString("p_name")%></h3>
+		<p><%=rs.getString("p_description")%>
+		<p><%=rs.getString("p_UnitPrice")%>원
+		<p><a href="product_detail.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;></a>
 	</div>
 	<%
 	}
 	%>
 </div>
 <%
-}
-%>
+			} // 반복문 끝난 이후 db 연결 종료	
+		if (rs != null)
+			rs.close();
+ 		if (pstmt != null)
+ 			pstmt.close();
+ 		if (conn != null)
+			conn.close();
+	%>
 
 </div>
 
