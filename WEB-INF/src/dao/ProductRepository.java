@@ -106,7 +106,7 @@ public class ProductRepository {
 		go03.setCategory("갈만한 곳");
 		go03.setManufacturer("인천");
 		go03.setUnitsInStock(1000);
-		go03.setCondition("New");
+		go03.setCondition("추천");
         go03.setImageText("월미도");
         go03.setLink("https://blog.naver.com/79blog79/222870846078");
         go03.setFilename("P1242.png"); 

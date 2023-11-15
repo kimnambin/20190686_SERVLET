@@ -52,7 +52,7 @@
         %>
         <div class="col-md-4">
             <div class="card bg-dark text-white">
-                <img src="image/product/<%= product.getFileName() %>" class="card-img" alt="..."> <!-- db연동-->
+                <img src="image/product/<%= product.getFilename() %>" class="card-img" alt="..."> <!-- db연동-->
                 <div class="card-img-overlay">
                     <h5 class="card-title">
                         <%= product.getImageText() %>
@@ -123,5 +123,3 @@
         <a href="#" class="list-group-item list-group-item-action">댓글달기</a>
     </div>
 </div>
-
-
