@@ -21,8 +21,8 @@
     function addsearch() {
         var searchText = document.getElementById('searchText').value;
         var encodedSearchText = encodeURIComponent(searchText);
-        var searchURL = 'https://section.blog.naver.com/Search/Post.naver?pageNo=1&rangeType=ALL&orderBy=sim&keyword=' + encodedSearchText;
-        window.location.href = searchURL;
+        var searchURL = 'https://section.blog.naver.com/Search/Post.naver?pageNo=1&rangeType=ALL&orderBy=sim&keyword=' 
+        + encodedSearchText; window.location.href = searchURL;
     }
 </script>
 
