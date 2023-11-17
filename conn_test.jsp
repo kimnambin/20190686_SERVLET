@@ -12,7 +12,7 @@
 
 	Class.forName("com.mysql.jdbc.Driver");
 	String myUrl = "jdbc:mysql://localhost/blog_20190686";
-	Connection conn = DriverManager.getConnection(myUrl, "root", "123123");
+	Connection conn = DriverManager.getConnection(myUrl, "root", "123123"); //학번으로 비번 변경
 	try {
         	stm = conn.createStatement();
             conn_state = true;

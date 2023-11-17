@@ -100,7 +100,7 @@ public class ProductRepository {
         go02.setLink("https://blog.naver.com/79blog79/222870846078");
         go02.setFilename("P1241.png");
         
-        
+        /*
          Product go03 = new Product("P1242", "월미도", 100000);
 		go03.setDescription("인천 갈만한 곳");
 		go03.setCategory("갈만한 곳");
@@ -110,7 +110,7 @@ public class ProductRepository {
         go03.setImageText("월미도");
         go03.setLink("https://blog.naver.com/79blog79/222870846078");
         go03.setFilename("P1242.png"); 
-       
+       */
         
         
         
@@ -128,7 +128,7 @@ public class ProductRepository {
         listOfProducts.add(cafe3);
         listOfProducts.add(go01);
         listOfProducts.add(go02);
-        listOfProducts.add(go03);
+        //listOfProducts.add(go03);
 		// listOfProducts.add(상품명);
         
     }
