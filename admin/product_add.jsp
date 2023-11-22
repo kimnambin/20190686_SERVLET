@@ -74,7 +74,7 @@
             <div class="form-group row">
                 <label class ="col-sm-2">*이미지</label>
                 <div class="col-sm-5">
-                    <input type="file" name="productImage" class="form-control">
+                    <input type="file"  name="productImage" class="form-control">
                 </div>
             </div>
             <div class="form-group row">

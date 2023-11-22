@@ -27,62 +27,63 @@
 </script>
 
 <div class="container">
-   
-
-   <!-- % 넣어야함
-    int productsPerGroup = 3;
-    String[] groupTitles = {
-        "<div class='list-group-item'>🍽️맛집 추천🍴</div>",
-        "<div class='list-group-item'>☕카페 추천🍹</div>",
-        "<div class='list-group-item'>😝갈만한 곳 추천😊</div>",
-    };
-
-    int groupNumber = 0; // 그룹 번호 초기화
-    for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++) {
-    %>
-    <div class="row justify-content-center">
-        <h2>= groupTitles[groupNumber] %></h2>
-    </div>-->
     <div class="row" align="center">
         <%
-		String sql = "select * from product"; // 조회
-		pstmt = conn.prepareStatement(sql); // 연결 생성
-		rs = pstmt.executeQuery(); // 쿼리 실행
-		while (rs.next()) { // 결과 ResultSet 객체 반복
-	%>
-       <!-- %넣어야함
-        for (int j = i; j < Math.min(i + productsPerGroup, listOfProducts.size()); j++) {
-            Product product = listOfProducts.get(j);
-        -->
-        <div class="col-md-4">
-            <div class="card bg-dark text-white">
-                <img src="admin/image/product/<%=rs.getString("p_filename")%>" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="card-title">
-    <%=rs.getString("p_name")%>
-</h5>
+            String sql = "select * from product";
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
 
-                    <p class="card-text">출처 : 칠구 블로그</p>
+            String[] Titles = {
+                "🍽️🍴맛집 추천1️⃣",
+                 "🍽️🍴맛집 추천2️⃣",
+                 "🍽️🍴맛집 추천3️⃣",
+                "☕🍹카페 추천1️⃣",
+                "☕🍹카페 추천2️⃣",
+                "☕🍹카페 추천3️⃣",
+                "😝😊갈만한 곳 추천1️⃣",
+                "😝😊갈만한 곳 추천2️⃣",
+                "😝😊갈만한 곳 추천3️⃣"
+            };
+        %>
+        
+
+        <div class="row justify-content-center">
+            <%
+                int titleIndex = 0;
+                while (rs.next()) {
+            %>
+            <div class="col-md-4">
+                <h2><%= Titles[titleIndex] %></h2>
+                <div class="card bg-dark text-white">
+                    <img src="../image/product/<%= rs.getString("p_filename") %>" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title"><%= rs.getString("p_name") %></h5>
+                        <p class="card-text">출처 : 칠구 블로그</p>
+                    </div>
                 </div>
+
+                <h3><%= rs.getString("p_name") %></h3>
+                <p><%= rs.getString("p_description") %></p>
+                <p><%= rs.getString("p_unitPrice") %>⚕️원</p>
+                <p><a href="product_detail.jsp?id=<%= rs.getString("p_id") %>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a></p>
             </div>
-            
-		<h3><%=rs.getString("p_name")%></h3>
-		<p><%=rs.getString("p_description")%>
-		<p><%=rs.getString("p_unitPrice")%>⚕️원
-		<p><a href="product_detail.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;></a>
+            <%
+                    titleIndex++;
+                    if (titleIndex >= Titles.length) {
+                        titleIndex = 0; // Reset index to loop back to the first title
+                    }
+                }
+                // Close the database connections
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            %>
         </div>
-       
-    
-   <%
-			} // 반복문 끝난 이후 db 연결 종료	
-		if (rs != null)
-			rs.close();
- 		if (pstmt != null)
- 			pstmt.close();
- 		if (conn != null)
-			conn.close();
-	%>
-</div>
+    </div>
+
+
+
+
 
 <hr>
 </div>
@@ -91,6 +92,13 @@
         background-color: #2ecc71;
         border-color: #2ecc71;
     }
+    .col-md-4{
+        border-bottom: 2px solid #ccc; 
+        margin-bottom: 80px; 
+    }
+   .h2.Titles {
+    font-size: 150px; 
+}
 </style>
 
 <div class="row">

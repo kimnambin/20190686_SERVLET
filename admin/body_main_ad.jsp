@@ -3,10 +3,13 @@
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>
 
-<%! String greeting = "⬇️추천 추천⬇️";
+
+<%! String greeting = "⚠️여기는 관리자 페이지입니다⚠️";
 	String tagline = "하단 페이지 : 확인";%>
 
-    <div class="container">
+
+	
+	<div class="container">
 	<div class="jumbotron">
 		<div class="container">
 			<h3 class="display-4">
@@ -19,7 +22,6 @@
 		ProductRepository dao = ProductRepository.getInstance();
 		ArrayList<Product> listOfProducts = dao.getAllProducts();
 	%>
-
 	<div class="container">
 		<div class="row" align="center">
 			<%
@@ -29,6 +31,7 @@
 
     			<div class="col-md-4">
                     <div class="card bg-dark text-white">
+                        
                         <img src="image/product/<%=product.getFileName()%>" class="card-img" alt="...">
                         <div class="card-img-overlay">
                         <h5 class="card-title">
@@ -46,7 +49,6 @@
 			<%
 				} // 반복문 끝
 			%>
-		</div>
 		<hr>
 	</div>
 
