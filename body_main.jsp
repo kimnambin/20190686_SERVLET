@@ -27,10 +27,9 @@
 </script>
 
 <div class="container">
-    <% ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.
-    %>
+   
 
-    <%
+   <!-- % 넣어야함
     int productsPerGroup = 3;
     String[] groupTitles = {
         "<div class='list-group-item'>🍽️맛집 추천🍴</div>",
@@ -42,42 +41,51 @@
     for (int i = 0; i < listOfProducts.size(); i += productsPerGroup, groupNumber++) {
     %>
     <div class="row justify-content-center">
-        <h2><%= groupTitles[groupNumber] %></h2>
-    </div>
+        <h2>= groupTitles[groupNumber] %></h2>
+    </div>-->
     <div class="row" align="center">
         <%
-        // 이 부분의 DB 쿼리는 삭제
+		String sql = "select * from product"; // 조회
+		pstmt = conn.prepareStatement(sql); // 연결 생성
+		rs = pstmt.executeQuery(); // 쿼리 실행
+		while (rs.next()) { // 결과 ResultSet 객체 반복
+	%>
+       <!-- %넣어야함
         for (int j = i; j < Math.min(i + productsPerGroup, listOfProducts.size()); j++) {
             Product product = listOfProducts.get(j);
-        %>
+        -->
         <div class="col-md-4">
             <div class="card bg-dark text-white">
-                <img src="image/product/<%= product.getFilename() %>" class="card-img" alt="..."> <!-- db연동-->
+                <img src="admin/image/product/<%=rs.getString("p_filename")%>" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">
-                        <%= product.getImageText() %>
-                    </h5>
+    <%=rs.getString("p_name")%>
+</h5>
+
                     <p class="card-text">출처 : 칠구 블로그</p>
                 </div>
             </div>
-            <h3><%= product.getPname() %></h3>
-            <p><%= product.getDescription() %></p>
-            <p><%= product.getUnitPrice() %>💲</p>
-            <p>
-                <a href="product_detail.jsp?id=<%= product.getProductId() %>" class="btn btn-secondary" role="button">상세 정보 &raquo;</a>
-            </p>
+            
+		<h3><%=rs.getString("p_name")%></h3>
+		<p><%=rs.getString("p_description")%>
+		<p><%=rs.getString("p_unitPrice")%>⚕️원
+		<p><a href="product_detail.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;></a>
         </div>
-        <%
-        }
-        %>
-    </div>
-    <%
-    } // 반복문 끝난 이후 db 연결 종료
-    %>
+       
+    
+   <%
+			} // 반복문 끝난 이후 db 연결 종료	
+		if (rs != null)
+			rs.close();
+ 		if (pstmt != null)
+ 			pstmt.close();
+ 		if (conn != null)
+			conn.close();
+	%>
 </div>
 
 <hr>
-
+</div>
 <style>
     .btn-secondary { 
         background-color: #2ecc71;

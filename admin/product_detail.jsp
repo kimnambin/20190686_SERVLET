@@ -58,7 +58,7 @@
 	</form>
 
                 <div class="card bg-dark text-white">
-                    <img src="image/product/<%=product.getFileName()%>" class="card-img" alt="...">
+                    <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="...">
                     <div class="card-img-overlay" align="center">
                     
                         <h5 class="card-title" align="center"><%= product.getImageText() %></h5>

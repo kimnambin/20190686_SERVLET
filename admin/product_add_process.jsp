@@ -54,10 +54,13 @@
 		stock = Long.valueOf(unitsInStock);
                                           
                                           
-       Enumeration files = multi.getFileNames();
+             Enumeration files = multi.getFileNames();
 	String fname = (String) files.nextElement();
-	String fileName = multi.getFilesystemName(fname);
-                                   
+	String fileName = multi.getFilesystemName(fname);	
+                                 
+      
+       
+
 
 	String sql = "insert into product values(?,?,?,?,?,?,?,?,?)";
 	pstmt = conn.prepareStatement(sql); // 쿼리문 몸체만 넣기
@@ -69,7 +72,7 @@
     	pstmt.setString(6, category);
 	pstmt.setString(7, unitsInStock);
 	pstmt.setString(8, condition);
-	pstmt.setString(9, fileName);
+	pstmt.setString(9, filename);
 	pstmt.executeUpdate(); // 최종 SQL 쿼리 실행	
 	if (pstmt != null)
  		pstmt.close();

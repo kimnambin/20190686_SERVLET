@@ -29,7 +29,7 @@
 
     			<div class="col-md-4">
                     <div class="card bg-dark text-white">
-                        <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="...">
+                        <img src="image/product/<%=product.getFileName()%>" class="card-img" alt="...">
                         <div class="card-img-overlay">
                         <h5 class="card-title">
 								<%= product.getImageText() %>

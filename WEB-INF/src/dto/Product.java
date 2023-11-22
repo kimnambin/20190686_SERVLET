@@ -17,7 +17,7 @@ public class Product implements Serializable { // 인터페이스 선언
     private String imageText;  // 이미지 텍스트
     private String link; // 링크 추가함 
     
-    private String filename; 	// 파일 이름 변수
+    private String fileName; 	// 파일 이름 변수
     private int quantity;	//장바구니에 담은 개수 -> 나는 저장목록
     
     public Product() {
@@ -111,8 +111,8 @@ public class Product implements Serializable { // 인터페이스 선언
         this.link = link;
     }
     
-    public void setFilename(String filename) { // 파일 이름 설정
-	this.filename = filename;
+    public void setFileName(String fileName) { // 파일 이름 설정
+	this.fileName = fileName;
 }
     
     public int getQuantity() {
@@ -123,8 +123,8 @@ public void setQuantity(int quantity) {
 	this.quantity = quantity;
 }
 
- public String getFilename() { // 파일 이름 리턴
-	return filename;
+ public String getFileName() { // 파일 이름 리턴
+	return fileName;
 }
 
    
