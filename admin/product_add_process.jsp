@@ -13,7 +13,7 @@
     request.setCharacterEncoding("UTF-8");
 
    String filename = "";
-	String realFolder = request.getServletContext().getRealPath("image/product"); //웹 어플리케이션상의 절대 경로
+	String realFolder = request.getServletContext().getRealPath("admin/image/product"); //웹 어플리케이션상의 절대 경로
 	String encType = "utf-8"; //인코딩 타입
 	int maxSize = 5 * 1024 * 1024; //최대 업로드될 파일의 크기5Mb
 
@@ -60,7 +60,7 @@
     pstmt.setString(6, category);
     pstmt.setString(7, unitsInStock);
     pstmt.setString(8, condition);
-    pstmt.setString(9, filename);
+    pstmt.setString(9, fileName);
     pstmt.executeUpdate(); // 최종 SQL 쿼리 실행
     if (pstmt != null)
         pstmt.close();

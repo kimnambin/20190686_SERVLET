@@ -7,14 +7,15 @@
 <%@ page import="java.sql.*"%> <!-- db 연동 -->
 <%@ include file="db/db_conn.jsp"%> <!-- db 연동 -->
 
-<%! String greeting = "⬇️추천 추천⬇️";
+<%!  String greeting = "칠구 블로그에 어서오세요😆😆🅱️블로그 주소: blog.naver.com/79blog79📷인스타 주소:79blog79 🏆추천추천🏆";
 	String tagline = "하단 페이지 : 확인"; %>
 
-<div class="jumbotron" align="center">
-	<div class="container" align="center">
-		<h3 class="display-4"><%= greeting %></h3>
-	</div>
+<div class="jumbotron mx-auto jumbotron-slider" align="center">
+  <div class="container" align="center">
+    <h3 class="display-4"><%= greeting %></h3>
+  </div>
 </div>
+
 
 <!-- 추가 구현 부분 (검색) -->
  <script>
@@ -40,9 +41,16 @@
                 "☕🍹카페 추천1️⃣",
                 "☕🍹카페 추천2️⃣",
                 "☕🍹카페 추천3️⃣",
-                "😝😊갈만한 곳 추천1️⃣",
-                "😝😊갈만한 곳 추천2️⃣",
-                "😝😊갈만한 곳 추천3️⃣"
+                "😝😊갈만한 곳1️⃣",
+                "😝😊갈만한 곳2️⃣",
+                "😝😊갈만한 곳3️⃣",
+                    "추가 테스트1️⃣",
+                "추가 테스트2️⃣",
+                "추가 테스트3️⃣",
+                 "추가 테스트4️⃣",
+                 "추가 테스트5️⃣",
+                 "추가 테스트6️⃣",
+                
             };
         %>
         
@@ -52,19 +60,19 @@
                 int titleIndex = 0;
                 while (rs.next()) {
             %>
-            <div class="col-md-4">
+           <div class="col-md-4" style="padding: 40px;">
                 <h2><%= Titles[titleIndex] %></h2>
                 <div class="card bg-dark text-white">
-                    <img src="../image/product/<%= rs.getString("p_filename") %>" class="card-img" alt="...">
+                    <img src="admin/image/product/<%= rs.getString("p_filename") %>" class="card-img" alt="...">
                     <div class="card-img-overlay">
                         <h5 class="card-title"><%= rs.getString("p_name") %></h5>
                         <p class="card-text">출처 : 칠구 블로그</p>
                     </div>
                 </div>
 
-                <h3><%= rs.getString("p_name") %></h3>
-                <p><%= rs.getString("p_description") %></p>
-                <p><%= rs.getString("p_unitPrice") %>⚕️원</p>
+                <h3>📌<%= rs.getString("p_name") %></h3>
+                <p>📁<%= rs.getString("p_description") %></p>
+                <p><%= rs.getString("p_unitPrice") %>🪙</p>
                 <p><a href="product_detail.jsp?id=<%= rs.getString("p_id") %>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a></p>
             </div>
             <%
@@ -98,6 +106,28 @@
     }
    .h2.Titles {
     font-size: 150px; 
+    }
+   
+       
+       .jumbotron-slider {
+    overflow: hidden;
+    position: relative;
+           height: 7px;
+  }
+
+  .jumbotron-slider .container {
+    display: flex;
+    animation: slide 10s linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 </style>
 
