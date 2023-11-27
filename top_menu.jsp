@@ -54,7 +54,7 @@
     <a href="../../index.jsp" class="btn btn-primary1">홈</a>
                       <!-- 교수님 db연동 수정 <a class="navbar-brand" href="index.jsp">상품목록(기본 홈)</a> -->
                         <a href="../admin/index_ad.jsp" class="btn btn-primary1">리뷰 작성하기</a>
-    <a href="../login/login.jsp" class="btn btn-primary1">로그인</a>
+    <a href="../admin/index_ad.jsp" class="btn btn-primary1">로그인</a>
     <a href="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0" class="btn btn-primary1">공식 블로그</a>
     <a href="https://blog.naver.com/79blog79" class="btn btn-primary1">칠구 블로그 방문하기</a>
     <a href="../admin/index_ad.jsp" class="btn btn-primary1">관리자모드</a>
