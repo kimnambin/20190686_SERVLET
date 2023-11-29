@@ -4,19 +4,7 @@
 <%@ page import="dao.ProductRepository"%>
 
 
-<%! String greeting = "⚠️여기는 관리자 페이지입니다⚠️";
-	String tagline = "하단 페이지 : 확인";%>
 
-
-	
-	<div class="container">
-	<div class="jumbotron">
-		<div class="container">
-			<h3 class="display-4">
-				<%=greeting%>
-            </h3>
-		</div>
-	</div>	
         
 	<%
 		ProductRepository dao = ProductRepository.getInstance();

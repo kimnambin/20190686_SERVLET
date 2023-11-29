@@ -1,44 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
-	<security-role>
-		<description></description>
-		<role-name>nambin</role-name>
-	</security-role>
-	<security-constraint>
-		<display-name>WebMarket Security_01</display-name>
-		<web-resource-collection>
-			<web-resource-name>WebMarket</web-resource-name>
-			<description></description>
-			
+    <security-role>
+        <description></description>
+        <role-name>nambin</role-name>
+    </security-role>
+    <security-constraint>
+        <display-name>WebMarket Security_01</display-name>
+        <web-resource-collection>
+            <web-resource-name>WebMarket</web-resource-name>
+            <description></description>
             <url-pattern>/admin/product_add.jsp</url-pattern>
-            	<url-pattern>/admin/index_ad.jsp</url-pattern>
-            	<url-pattern>/admin/product_edit.jsp</url-pattern>
-            
-            
-		</web-resource-collection>
-		<auth-constraint>
-			<description>권한 관리자명</description>
-			<role-name>nambin</role-name>
-		</auth-constraint>
-	</security-constraint>
+            <url-pattern>/admin/index_ad.jsp</url-pattern>
+            <url-pattern>/admin/product_edit.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>권한 관리자명</description>
+            <role-name>nambin</role-name>
+        </auth-constraint>
+    </security-constraint>
     <login-config>
-		<auth-method>FORM</auth-method>
-		<form-login-config>
-			<form-login-page>/login/login.jsp</form-login-page>
-			<form-error-page>/login/login_failed.jsp</form-error-page>
-		</form-login-config>
-	</login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login/login.jsp</form-login-page>
+            <form-error-page>/login/login_failed.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
     
     <servlet>
-		<servlet-name>BoardController</servlet-name>
-		<servlet-class>mvc.controller.Board_controller</servlet-class>
-	</servlet>
+        <servlet-name>BoardController</servlet-name>
+        <servlet-class>mvc.controller.Board_controller</servlet-class>
+    </servlet>
 
-	<servlet-mapping>
-		<servlet-name>BoardController</servlet-name>
-		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>BoardController</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
 </web-app>
 
 <!-- 

@@ -7,14 +7,7 @@
 <%@ page import="java.sql.*"%> <!-- db 연동 -->
 <%@ include file="db/db_conn.jsp"%> <!-- db 연동 -->
 
-<%!  String greeting = "칠구 블로그에 어서오세요😆😆🅱️블로그 주소: blog.naver.com/79blog79📷인스타 주소:79blog79 🏆추천추천🏆";
-	String tagline = "하단 페이지 : 확인"; %>
 
-<div class="jumbotron mx-auto jumbotron-slider" align="center">
-  <div class="container" align="center">
-    <h3 class="display-4"><%= greeting %></h3>
-  </div>
-</div>
 
 
 <!-- 추가 구현 부분 (검색) -->
@@ -27,7 +20,27 @@
     }
 </script>
 
-<div class="container">
+<div style="text-align: center;">
+    <img src="image/7979.png" alt="7979 Image">
+</div>
+
+<div class="container" style="padding: 40px;">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <form method="post" name="search" action="searchbbs.jsp">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="검색어 입력" id="searchText" maxlength="100">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-success">검색</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+<div id="searchResult"></div>
+    
     <div class="row" align="center">
         <%
             String sql = "select * from product";
@@ -104,52 +117,10 @@
         border-bottom: 2px solid #ccc; 
         margin-bottom: 80px; 
     }
-   .h2.Titles {
-    font-size: 150px; 
-    }
-   
-       
-       .jumbotron-slider {
-    overflow: hidden;
-    position: relative;
-           height: 7px;
-  }
 
-  .jumbotron-slider .container {
-    display: flex;
-    animation: slide 10s linear infinite;
-  }
-
-  @keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-}
 </style>
 
-<div class="row">
-    <div class="col-md-4 offset-md-4">
-        <form method="post" name="search" action="searchbbs.jsp">
-            <div class="form-group">
-                <select class="form-control" name="searchField">
-                    <option value="0">글</option>
-                    <option value="bbsTitle">블로그</option>
-                    <option value="userID">작성자</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="검색어 입력" id="searchText" maxlength="100">
-            </div>
-            <button type="submit" class="btn btn-success">검색</button> <!-- 버튼 타입 수정 -->
-        </form>
-    </div>
-</div>
 
-<div id="searchResult"></div>
 
 <div class="container">
     <div class="card bg-dark text-blue">

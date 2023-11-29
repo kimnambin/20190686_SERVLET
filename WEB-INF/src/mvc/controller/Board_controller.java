@@ -49,7 +49,7 @@ public class Board_controller extends HttpServlet {
 		} else if (command.equals("/BoardView.do")) { //글 상세 페이지 출력하기
 				RequestDispatcher rd = request.getRequestDispatcher("./board/board_view.jsp");
 				rd.forward(request, response);	
-		} else if (command.equals("/BoardUpdateAction.do")) { //선택된 글의 조회수 증가하기
+		} else if (command.equals("/BoardUpdateAction.do")) { //선택된 글의 조회수 증
 				requestBoardUpdate(request);
 				RequestDispatcher rd = request.getRequestDispatcher("/BoardListAction.do");
 				rd.forward(request, response);

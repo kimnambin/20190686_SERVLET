@@ -81,7 +81,7 @@
         </nav>
     <div class="text-center">
         <%!
-            String greeting = "칠구 블로그에 어서오세요😆😆";
+            String greeting = "로그인이 필요합니다❗❗";
             String tagline = "하단 페이지 : 확인"; 
         %>
 
