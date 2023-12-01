@@ -50,6 +50,9 @@
                     <div class="navbar">
                         <a href="../../index.jsp" class="btn btn-primary1">홈</a>
                         <a href="../admin/index_ad.jsp" class="btn btn-primary1">리뷰 작성하기</a>
+                        <a href="product_add.jsp" class="btn btn-primary1">등록</a>
+                        <a href="../admin/product_edit.jsp?edit=update" class="btn btn-primary1">수정</a>
+                        <a href="../admin/product_edit.jsp?edit=delete" class="btn btn-primary1">삭제</a>
                         <a class="navbar-brand" href="/BoardListAction.do?pageNum=1">게시판(고객센터)</a>
                         <a href="../admin/index_ad.jsp" class="btn btn-primary1">관리자모드</a>
                     </div>

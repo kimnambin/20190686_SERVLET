@@ -71,8 +71,13 @@
                     <div class="navbar-header">
                         <div class="navbar">
                          <a class="navbar-brand" href="index.jsp" >홈</a>
+                            
                            <a class="navbar-brand"href="../admin/index_ad.jsp" >리뷰 작성하기</a>
-                            <a class="navbar-brand" href="/BoardListAction.do?pageNum=1">게시판(고객센터)</a>
+                            <a class="navbar-brand" href="../login/login_user.jsp">로그인 </a>
+                            <a class="navbar-brand" href="../member/member_join.jsp">회원가입</a>
+                            <a class="navbar-brand" href="../admin/product_add.jsp">등록</a>
+                            
+                        <a class="navbar-brand" href="/BoardListAction.do?pageNum=1">게시판(고객센터)</a>
                             <a class="navbar-brand" href="../admin/index_ad.jsp" >관리자모드</a>
                         </div>
                     </div>
