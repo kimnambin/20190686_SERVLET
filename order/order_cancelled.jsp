@@ -11,7 +11,7 @@
 <body>
 	<jsp:include page="../top_menu.jsp" />
 	<div class="jumbotron">
-		<div class="container">
+		<div class="container border">
 			<h1 class="display-3">예약 취소</h1>
 		</div>
 	</div>

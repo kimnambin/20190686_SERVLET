@@ -35,7 +35,7 @@
 		String id = request.getParameter("id");
 		Product product = productDAO.getProductById(id);
 	%>
-	<div class="container" align="center">
+	<div class="container border" align="center">
 		<div class="row" align="center">
                       
             

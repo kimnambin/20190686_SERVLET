@@ -49,12 +49,12 @@
 <body>
 	<jsp:include page="../top_menu.jsp" />
 	<div class="jumbotron">
-	   <div class="container">
+	   <div class="container border">
 		<h1 class="display-3">예약 정보</h1>
 	   </div>
 	</div>
 
-	<div class="container col-8 alert alert-info">
+	<div class="container col-8 alert alert-info ">
 	   <div class="text-center ">
 		<h1>영수증</h1>
 	   </div>
@@ -72,7 +72,7 @@
         <div>
 		<table class="table table-hover">			
 		<tr>
-			<th class="text-center">도서</th>
+			<th class="text-center">이름</th>
 			<th class="text-center">#</th>
 			<th class="text-center">가격</th>
 			<th class="text-center">소계</th>

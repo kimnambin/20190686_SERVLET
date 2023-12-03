@@ -12,44 +12,44 @@
 <body>
     <jsp:include page="top_menu_ad.jsp" />
     <div class="jumbotron">
-        <div class="container">
+        <div class="container border">
             <h1 class="display-3">리뷰 등록</h1>
         </div>
     </div>
     <div class="container">
         <form name="newProduct" action="product_add_process.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
-            <div class="form-group row">
+            <div class="form-group row mx-auto border p-3">
                 <label for="productId" class="col-sm-2">*상품 코드</label><br>
                 
                 <div class="col-sm-3">
                     <input type="text" id ="productId" name="productId" class="form-control" placeholder="(P+숫자 조합)">
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row mx-auto border p-3">
                 <label for="name" class="col-sm-2">*제목</label>
                 <div class="col-sm-3">
                     <input type="text" id ="name" name="name" class="form-control" placeholder="제목을 입력하세요">
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row mx-auto border p-3">
                 <label for="unitPrice" class="col-sm-2">*가격</label>
                 <div class="col-sm-3">
                     <input type="text" id ="unitPrice" name="unitPrice" class="form-control" placeholder="반드시 숫자로 입력하세요">
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row mx-auto border p-3">
                 <label for="description" class="col-sm-2">상세 정보</label>
                 <div class="col-sm-5">
                     <textarea name="description" cols="50" rows="2" class="form-control" placeholder="간단하게라도 입력해주세요."></textarea>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row mx-auto border p-3">
                 <label for="manufacturer" class="col-sm-2">*위치</label>
                 <div class="col-sm-3">
                     <input type="text" name="manufacturer" class="form-control" placeholder="ex) 경기도 화성시 ~~">
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row mx-auto border p-3">
                 <label class="col-sm-2">*분류</label>
                 <div class="col-sm-5">
                     <input type="radio" name="category" value="맛집"> 맛집
@@ -57,13 +57,13 @@
                     <input type="radio" name="category" value="갈만한 곳"> 갈만한 곳
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row mx-auto border p-3">
                 <label for="unitsInStock" class="col-sm-2">블로그 리뷰수</label>
                 <div class="col-sm-3">
                     <input type="text" id ="unitsInStock"  name="unitsInStock" class="form-control" placeholder="반드시 숫자로 입력해주새요.">
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row mx-auto border p-3">
                 <label class="col-sm-2">평가</label>
                 <div class="col-sm-5">
                     <input type="radio" name="condition" value="강력추천"> 강력 추천
@@ -71,7 +71,7 @@
                     <input type="radio" name="condition" value="비추천"> 비추천
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row mx-auto border p-3">
                 <label class ="col-sm-2">*이미지</label>
                 <div class="col-sm-5">
                     <input type="file"  name="productImage" class="form-control">

@@ -29,11 +29,11 @@
    <jsp:include page="top_menu_ad.jsp" />
    <div class="jumbotron">
 	   <div class="container">
-		<h1 class="display-3">상품 편집</h1>
+		<h1 class="display-3" align="center" >상품 편집</h1>
 	   </div>
 	</div>
 
-	<div class="container">
+	<div class="container border">
 	   <div class="row" align="center">
 		<%@ include file="../db/db_conn.jsp"%>
 		<%

@@ -20,14 +20,14 @@
 <title>저장하기</title>
 </head>
 <body>
-	<jsp:include page="../top_menu.jsp" />
+	<jsp:include page="../top_banner.jsp" />
 
 	<div class="jumbotron">
 	<div class="container">
-		<h1 class="display-3">저장하기</h1>
+		<h1 class="display-3">상품예약</h1>
 	</div>
 	</div>
-	<div class="container">
+	<div class="container border">
 	<div class="row">
 		<table width="100%">
 			<tr>

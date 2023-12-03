@@ -125,7 +125,7 @@
             <h1 class="display-3">ℹ️예약 정보</h1>
         </div>
     </div>
-    <div class="container">
+    <div class="container  border">
         <form action="order_info_process.jsp" class="form-horizontal" method="post">
             <input type="hidden" name="cartId" value="<%=request.getParameter("cartId")%>" />
             <div class="form-group row">

@@ -25,10 +25,10 @@
 
     <body>
     	<%@ include file="top_banner.jsp" %>
-	<%@ include file="top_menu.jsp" %>
+	
 	<div class="jumbotron">
 		<div class="container" align="center" >
-			<h1 class="display-3"align="center">상세 정보</h1>
+			<h1 class="display-4">상세 정보</h1>
 		</div>
 	</div>
 	<%
@@ -36,11 +36,11 @@
 		Product product = productDAO.getProductById(id);
 	%>
 	<div class="container" align="center">
-		<div class="row" align="center">
+		<div class="row justify-content-center">
                       
             
             
-			<div class="col-md-6" align="center">
+			<div class="col-md-6  border" align="center">
 				<h3><%=product.getPname()%></h3>
 				<p><%=product.getDescription()%>
 				<p><b>상품 코드 : </b><span class="badge badge-danger"> <%=product.getProductId()%></span>
@@ -51,9 +51,9 @@
                 
                 
 <p><form name="addForm" action="cart/product_cart_add.jsp?id=<%=product.getProductId()%>" method="post">
-			 <a href="#" class="btn btn-info" onclick="addToCart()"> 상품저장하기 &raquo;</a> 
+			 <a href="#" class="btn btn-info" onclick="addToCart()"> 상품예약하기 &raquo;</a> 
            <!-- <a href="order/order_info.jsp" class="btn btn-info"> 예약하기 &raquo;</a> -->
-			<a href="cart/product_cart.jsp" class="btn btn-warning" > 저장하기 &raquo;</a>
+			<a href="cart/product_cart.jsp" class="btn btn-warning" > 주문하기 &raquo;</a>
                 
 	</form>
 
