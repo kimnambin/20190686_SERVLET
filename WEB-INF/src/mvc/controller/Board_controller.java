@@ -166,8 +166,7 @@ public class Board_controller extends HttpServlet {
 		 dao.updateBoard(board);								
 	}
     
-    	//선택된 글 삭제하기
-	public void requestBoardDelete(HttpServletRequest request){
+    	 public void requestBoardDelete(HttpServletRequest request){
 					
 		int num = Integer.parseInt(request.getParameter("num"));
 		int pageNum = Integer.parseInt(request.getParameter("pageNum"));	
@@ -176,3 +175,4 @@ public class Board_controller extends HttpServlet {
 		dao.deleteBoard(num);							
 	}	
 }
+

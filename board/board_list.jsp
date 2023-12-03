@@ -20,21 +20,18 @@
 <title>고객센터 게시판</title>
 <script type="text/javascript">
    function checkForm() {	
-      if (${sessionId==null}) {
-        alert("로그인 해주세요.");
-        location.href = "../login/login.jsp";
-        return false;
-      }
-      location.href = "./BoardWriteForm.do?id=<%=sessionId%>";
+    
+      location.href = "./BoardWriteForm.do?id=<%=sessionId%>"
    }
 </script>
 </head>
 
 <body>
-<jsp:include page="../top_menu.jsp" />
+<jsp:include page="../top.jsp" />
 <div class="jumbotron">
+    <h1 class="display-5" align="center">게시판(고객센터)</h1>
    <div class="container">
-	<h1 class="display-3">게시판(고객센터)</h1>
+	
    </div>
 </div>
 <div class="container">
@@ -56,6 +53,7 @@
           <th>작성일</th>
           <th>조회</th>
           <th>글쓴이</th>
+            <th>삭제</th>
         </tr>
 
           
@@ -69,6 +67,13 @@
           <td><%=notice.getRegist_day()%></td>
           <td><%=notice.getHit()%></td>
           <td><%=notice.getName()%></td>
+            <td>
+    <form action="./BoardDeleteAction.do" method="post">
+      <input type="hidden" name="num" value="<%=notice.getNum()%>">
+      <input type="hidden" name="pageNum" value="<%=pageNum%>">
+      <button type="submit" class="btn btn-danger">삭제</button>
+    </form>
+  </td>
         </tr>
         <%
         }
@@ -92,21 +97,26 @@
    </div>
    <div align="left">
        
-      <table>
-        <tr>
-           <td width="100%" align="left">&nbsp;&nbsp; 
+      
+<table >
+    <tr>
+        <td width="50%" align="center">
             <select name="items" class="form-control">
-              <option value="subject">제목에서</option>
-              <option value="content">본문에서</option>
-              <option value="name">글쓴이에서</option>
-            </select> <input name="text" type="text" /> <input type="submit" id="btnAdd" class="btn btn-primary" value="검색" />
-           </td>
-           <td width="100%" align="right">
-            <!--<a href="board_writeform.jsp" onclick="checkForm(); return false;" class="btn btn-primary">&laquo;글쓰기</a> -->
-               <a href="./BoardWriteForm.do?id=<%=sessionId%>" class="btn btn-primary">&laquo;글쓰기</a>
-           </td>
-         </tr>
-     </table>
+                <option value="subject">제목에서</option>
+                <option value="content">본문에서</option>
+                <option value="name">글쓴이에서</option>
+            </select>
+            <input name="text" type="text" />
+            <input type="submit" id="btnAdd" class="btn btn-primary" value="검색" />
+        </td>
+        <td width="50%" align="center">
+            <!-- <a href="./BoardWriteForm.do?" class="btn btn-primary">&laquo;글쓰기</a> -->
+          <a href="#" onclick="checkForm(); return false;" class="btn btn-primary">&laquo;글쓰기</a>
+            
+        </td>
+    </tr>
+</table>
+
    </div>
 </form>
 <hr>

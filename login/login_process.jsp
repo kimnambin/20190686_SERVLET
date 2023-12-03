@@ -1,65 +1,32 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ page import="java.sql.*"%>
-<%@ page import="java.io.*"%>
+<%@ page contentType="text/html;charset=utf-8" %>
+<%@ page import="java.sql.*" %>
+<%@ include file="../db/db_conn.jsp" %>
 
 <%
-    // 데이터베이스 연결
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
+    
+    request.setCharacterEncoding("UTF-8");
+    String j_username = request.getParameter("j_username");
+    String j_password = request.getParameter("j_password");
 
-    try {
-        String url = "jdbc:mysql://localhost:3306/blog_20190686";
-        String user = "root";
-        String password = "20190686";
+   
+    String sql = "SELECT * FROM member WHERE joinid = ?"; 
+    pstmt = conn.prepareStatement(sql); 
+    pstmt.setString(1, j_username); 
+    rs = pstmt.executeQuery();
 
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection(url, user, password);
-
-        // 사용자로부터 전달된 파라미터 가져오기
-        String joinid = request.getParameter("id");
-        String joinpassword = request.getParameter("password");
-
-        // SQL 쿼리 작성 및 실행
-        String sql = "SELECT * FROM member WHERE joinid = ? AND joinpassword = ?";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, joinid);
-        pstmt.setString(2, joinpassword);
-
-        rs = pstmt.executeQuery();
-
-        if (rs.next()) {
-            // 로그인 성공
-            session.setAttribute("sessionId", joinid);
-            response.sendRedirect("../member/member_body.jsp");
+    
+    if (rs.next()) {
+        String storedPassword = rs.getString("joinpassword");
+        // 여기서 storedPassword와 j_password를 비교하여 로그인 성공 여부 확인
+        if (storedPassword.equals(j_password)) {
+            // 로그인 성공 시
+            response.sendRedirect("../index.jsp");
         } else {
-            // 로그인 실패
-            response.sendRedirect("../login/login_user.jsp?error=true");
+            // 비밀번호 불일치 시
+            // 로그인 실패 처리 또는 에러 메시지 표시
         }
-    } catch (Exception e) {
-        e.printStackTrace();
-    } finally {
-        // 리소스 해제
-        if (rs != null) {
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        if (pstmt != null) {
-            try {
-                pstmt.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+    } else {
+        // 사용자가 입력한 아이디에 해당하는 계정이 없을 때
+        // 로그인 실패 처리 또는 에러 메시지 표시
     }
 %>

@@ -77,7 +77,7 @@
                             <a class="navbar-brand" href="../member/member_join.jsp">회원가입</a>
                             <a class="navbar-brand" href="../admin/product_add.jsp">등록</a>
                             
-                        <a class="navbar-brand" href="/BoardListAction.do?pageNum=1">게시판(고객센터)</a>
+                       
                             <a class="navbar-brand" href="../admin/index_ad.jsp" >관리자모드</a>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
         </nav>
     <div class="text-center">
         <%!
-            String greeting = "칠구 블로그에 어서오세요😆😆";
+            String greeting = "고객센터 고객센터";
             String tagline = "하단 페이지 : 확인"; 
         %>
 
