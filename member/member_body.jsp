@@ -1,12 +1,13 @@
+<html>
+    <head>
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="dto.Product"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
+
 <!-- 검색 추가 구현 -->
 <%@ page import="java.io.*,java.net.*,java.util.*" %>
 <%@ page import="java.sql.*"%> <!-- db 연동 -->
+<%@ page import="example.*" %>
 
-<%@ include file="member_top.jsp"%> 
+
 
 
 
@@ -20,28 +21,18 @@
     }
 </script>
 
+  
+    
 <div style="text-align: center;">
     <img src="../image/7979.png" alt="7979 Image">
+    <h1>
+        사용자 페이지 로그인 완료!!
+    </h1>
 </div>
-
-<div class="container" style="padding: 40px;">
+ <div class="row" align="center">
+     
+     <div class="container" style="padding: 40px;">
     <div class="row">
-        <div class="col-md-10 offset-md-1">
-            <form method="post" name="search" action="searchbbs.jsp">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="검색어 입력" id="searchText" maxlength="100">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-success">검색</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-<div id="searchResult"></div>
-    
-    <div class="row" align="center">
         <%
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -104,6 +95,23 @@
         }
     }
 %>
+
+        <div class="col-md-10 offset-md-1">
+            <form method="post" name="search" action="searchbbs.jsp">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="검색어 입력" id="searchText" maxlength="100">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-success">검색</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+<div id="searchResult"></div>
+    
+   
         
 
         
@@ -143,3 +151,8 @@
         <a href="#" class="list-group-item list-group-item-action">댓글달기</a>
     </div>
 </div>
+        </div>
+    
+</html>
+
+    
