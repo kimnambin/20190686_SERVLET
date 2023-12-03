@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 
 <html lang="ko">
 
@@ -24,16 +26,16 @@
         <form name="join" action="member_join_process.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
 
             <div class="form-group row mx-auto border p-3">
-                <label for="joinid" class="col-sm-2">id</label><br>
+                <label for="joinid" class="col-sm-2">id</label>
                 <div class="col-sm-3">
-                    <input type="text" id="joinid" name="joinid" class="form-control" placeholder="사용할 아이디를 입력해주세요.">
+                    <input type="text" id="joinid" name="joinid" class="form-control" placeholder="사용할 아이디를 입력해주세요." required autofocus>
                 </div>
             </div>
 
             <div class="form-group row mx-auto border p-3">
                 <label for="joinpassword" class="col-sm-2">password</label>
-                <div class="col-sm-3">
-                    <input type="text" id="joinpassword" name="joinpassword" class="form-control" placeholder="사용할 비번을 입력하세요">
+                <div class="col-sm-3" style="width: 100%">
+                    <input type="text" id="joinpassword" name="joinpassword" class="form-control" placeholder="사용할 비번을 입력하세요" required autofocus>
                 </div>
             </div>
             
@@ -82,7 +84,7 @@
             
            <div class="form-group row mx-auto border p-3">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <input type ="button" class="btn btn-primary" value="가입">
+                    <input type ="submit" class="btn btn-primary" value="가입">
            
                </div>
             </div>

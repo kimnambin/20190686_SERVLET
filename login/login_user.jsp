@@ -6,7 +6,10 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
+
+
+    </head>
+    
 <body>
     <jsp:include page="../top_munu1.jsp" />
     <hr>
@@ -16,8 +19,11 @@
     <hr>
     <div class="container">
         <div class="col-md-4 offset-md-4">
-            <h3 class="form-signin-heading">사용자 로그인</h3>
+            
+          
             <%
+            
+            
                 String error = request.getParameter("error");
                 if (error != null) {
                     out.println("<div class='alert alert-danger'>");
@@ -25,17 +31,18 @@
                     out.println("</div>");
                 }
             %>
-            <form class="form-signin" action="j_security_check" method="post">
-                <div class="form-group">
-                    <label for="inputUserName" class="sr-only">User Name</label>
-                    <input type="text" class="form-control" placeholder="ID" name="j_username" required autofocus>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" name="j_password" required>
-                </div>
-                <button class="btn btn-lg btn-success btn-block" type="submit">로그인</button>
-            </form>
+            <form class="form-signin" action="login_process.jsp" method="post">
+			<div class="form-group">
+				<label class="sr-only">User Name</label>
+				<input name="id" class="form-control" placeholder="ID" required autofocus>
+			</div>
+			<div class="form-group">
+				<label class="sr-only">Password</label>
+				<input type="password" name="password" class="form-control" placeholder="Password" required>
+			</div>
+			<button class="btn btn-lg btn-success btn-block" type="submit">로그인</button>
+			<button class="btn btn-lg btn-success btn-block" type="button" onclick="location.href='../member/member_join.jsp'">회원가입</button>
+		</form>
         </div>
     </div>
 </body>
