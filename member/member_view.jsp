@@ -49,19 +49,12 @@
                     <p style="text-align:left"><b style="display:inline-block;width:120px;">메일 : </b><%=rs.getString("joinmail")%></p>
                     <p style="text-align:left"><b style="display:inline-block;width:120px;">번호 : </b><%=rs.getString("joinphone")%></p>
                     <p style="text-align:left"><b style="display:inline-block;width:120px;">주소 : </b><%=rs.getString("joinaddress")%></p>
-                   
-                     <%
-                                // 'edit' 파라미터가 null이 아닌지 확인 후에 접근
-                                if (edit != null && edit.equals("m_update")) {
-                            %>
+                
+                     
                                 <a href="member_update.jsp?id=<%=rs.getString("joinid")%>" class="btn btn-success" role="button">수정 &raquo;></a>
-                            <%
-                                } else if (edit != null && edit.equals("m_delete")) {
-                            %>
+                     
                                 <a href="#" onclick="deleteConfirm('<%=rs.getString("joinid")%>')" class="btn btn-danger" role="button">삭제 &raquo;></a>
-                            <%
-                                }
-                            %>
+                     
                 </div>
                     <%
                     }

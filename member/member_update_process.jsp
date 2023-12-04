@@ -10,20 +10,20 @@
     // 앞에서 id 받아오기
     request.setCharacterEncoding("UTF-8");
 
-	String id = request.getParameter("id");
-	String password = request.getParameter("password");
-	String name = request.getParameter("name");
-	String gender = request.getParameter("gender");
-	String birth = request.getParameter("birth");
-	String mail = request.getParameter("mail");
-	String phone = request.getParameter("phone");
-	String address = request.getParameter("address");
+	String joinid = request.getParameter("joinid");
+	String joinpassword = request.getParameter("joinpassword");
+	String joinname = request.getParameter("joinname");
+	String joingender = request.getParameter("joingender");
+	String joinbirth = request.getParameter("joinbirth");
+	String joinmail = request.getParameter("joinmail");
+	String joinphone = request.getParameter("joinphone");
+	String joinaddress = request.getParameter("joinaddress");
     LocalDate _regist_day = LocalDate.now();
     String  regist_day = String.valueOf(_regist_day);
 
     out.println(joinid + joinpassword + joinname + joingender);
 
-    String sql = "UPDATE member SET joinid=?, joinname=?, joinpassword=?, joinbirth=?, joingender=?, joinmail=?, joinphone=?, joinaddress=?
+    String sql = "UPDATE member SET joinname=?, joinpassword=?, joinbirth=?, joingender=?, joinmail=?, joinphone=?, joinaddress=? , WHERE joinid=?";
     pstmt = conn.prepareStatement(sql); // 쿼리문 몸체만 넣기
 
     pstmt.setString(1, joinid);

@@ -41,6 +41,7 @@
     <error-page>
         <error-code>404</error-code>
         <location>/exception/main_server_downtime.jsp</location> 
+        <location>/exception/product_not_found.jsp/</location>
     </error-page>
 -->
 

@@ -53,12 +53,10 @@
                 
 <div class="form-group row">
                     <div class="col-sm-offset-2 col-sm-10 ">
-                        <c:set var="userId" value="<%=notice.getId()%>" />
-                        <c:if test="${sessionId==userId}">
-                            <p>
+                       
                             <a href="./BoardDeleteAction.do?num=<%=notice.getNum()%>&pageNum=<%=nowpage%>" class="btn btn-danger"> 삭제</a> 
                             <input type="submit" class="btn btn-success" value="수정 ">
-                        </c:if>
+                        
                         <a href="./BoardListAction.do?pageNum=<%=nowpage%>" class="btn btn-primary"> 목록</a>
                     </div>
                 </div>

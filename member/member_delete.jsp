@@ -4,7 +4,7 @@
 
 <%
     // 앞에서 받아온 id
-    String id = request.getParameter("joinid");
+    String joinid = request.getParameter("joinid");
     
     // db 연동
     String sql = "select * from member"; // sql문 -- 전체 조회
@@ -14,7 +14,7 @@
     while (rs.next()) {
         String test = rs.getString("joinid");
         
-        if(id.equals(test)) {
+        if(joinid.equals(test)) {
             String sql1 = "delete from member where joinid = ?";
             pstmt = conn.prepareStatement(sql1);
             pstmt.setString(1, joinid);

@@ -24,8 +24,7 @@
    
 </head>
 <body>
-    <%@ include file="../top_banner.jsp" %>
-    <%@ include file="../top_menu.jsp" %>
+    
     <div class="jumbotron">
         <div class="container" align="center">
             <h1 class="display-3" align="center">🍽️카페 페이지🍴</h1>
@@ -42,6 +41,6 @@
 </div>
         </div>
     <hr>
-    <%@ include file="../footer.jsp" %>
+   
 </body>
 </html>
