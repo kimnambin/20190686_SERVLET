@@ -37,8 +37,11 @@ top_banner.jsp
 
 데이터베이스 사진들 
 
+![board](https://github.com/kimnambin/20190686_SERVLET/assets/127464935/38f2d2e9-df55-41d9-a5f3-0748787deb0f)
 
+![member](https://github.com/kimnambin/20190686_SERVLET/assets/127464935/9c397f74-6a4f-4ba2-a4d8-682448365b4f)
 
+![product](https://github.com/kimnambin/20190686_SERVLET/assets/127464935/b1fe44e6-b7f9-4cd9-bd85-592dfba04002)
 
 
 나머지 폴더와 파일들은 수업시간에 한 내용들입니다.
